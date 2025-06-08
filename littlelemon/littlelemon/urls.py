@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from restaurant import views
 from rest_framework.routers import DefaultRouter
+from restaurant.swagger import schema_view
 
 router = DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -30,4 +31,6 @@ urlpatterns = [
     path('menu/<int:pk>', views.SingleMenuItemView.as_view()),
     path('restaurant/booking/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
