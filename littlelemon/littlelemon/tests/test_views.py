@@ -3,12 +3,11 @@ from django.urls import reverse
 from rest_framework.test import APIClient
 from rest_framework import status
 from restaurant.models import MenuItem
-from restaurant.serializers import MenuItemSerializer
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
 
 class MenuViewTest(TestCase):
-
+    
     def setUp(self):
         """Add test instances of the Menu model"""
         self.item1 = MenuItem.objects.create(title="Pizza", price=150, inventory=50)
@@ -23,12 +22,21 @@ class MenuViewTest(TestCase):
         # Generate a token for TokenAuthentication
         self.token, _ = Token.objects.get_or_create(user=self.user)
         self.client.credentials(HTTP_AUTHORIZATION=f"Token {self.token.key}")
+    
+    def test_menu_html_rendering(self):
+        response = self.client.get(reverse('menu'))
+        self.assertEqual(response.status_code, 200)
+        
+        self.assertContains(response, "<h1>Menu</h1>")
+        self.assertContains(response, "Pizza")  
+        self.assertContains(response, "Pasta")
 
-    def test_getall(self):
-        """Retrieve all Menu objects and verify serialization"""
-        response = self.client.get(reverse('menu-list'))  # Update with correct URL name
-        menu_items = MenuItem.objects.all()
-        expected_data = MenuItemSerializer(menu_items, many=True).data
-
+    def test_about_view(self):
+        """Test about page rendering"""
+        response = self.client.get(reverse('about'))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data, expected_data)
+
+    def test_home_view(self):
+        """Test home page rendering"""
+        response = self.client.get(reverse('home'))
+        self.assertEqual(response.status_code, status.HTTP_200_OK)

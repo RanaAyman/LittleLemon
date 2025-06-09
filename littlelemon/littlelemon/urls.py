@@ -22,14 +22,14 @@ from restaurant.swagger import schema_view
 
 router = DefaultRouter()
 router.register(r'users', views.UserViewSet)
-router.register(r'tables', views.BookingViewSet)
+# router.register(r'tables', views.BookingViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('restaurant.urls')),
-    path('menu/', views.MenuItemsView.as_view(), name="menu-list"),
-    path('menu/<int:pk>', views.SingleMenuItemView.as_view()),
-    path('restaurant/booking/', include(router.urls)),
+    
+    path('', include(router.urls)),
+    
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
