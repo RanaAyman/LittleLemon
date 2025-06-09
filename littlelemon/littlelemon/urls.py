@@ -27,10 +27,13 @@ router.register(r'tables', views.BookingViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('restaurant.urls')),
-    path('menu/', views.MenuItemsView.as_view()),
+    path('menu/', views.MenuItemsView.as_view(), name="menu-list"),
     path('menu/<int:pk>', views.SingleMenuItemView.as_view()),
     path('restaurant/booking/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
+    
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
