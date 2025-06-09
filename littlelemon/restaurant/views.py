@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from rest_framework import viewsets, generics, permissions
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 def index(request):
@@ -35,14 +36,16 @@ class UserViewSet(viewsets.ModelViewSet):
 
 # Create your views here. 
 class MenuItemsView(generics.ListCreateAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
 
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
     
 class BookingViewSet(viewsets.ModelViewSet):
-   queryset = Booking.objects.all()
-   serializer_class = BookingSerializer
-   permission_classes = [permissions.IsAuthenticated] 
+    permission_classes = [permissions.IsAuthenticated] 
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
