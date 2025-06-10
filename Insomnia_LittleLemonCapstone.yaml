@@ -1,0 +1,530 @@
+type: collection.insomnia.rest/5.0
+name: LittleLemonCapstone Collection
+meta:
+  id: wrk_dd94ad942fdc458492c33c9358d8a661
+  created: 1749541446660
+  modified: 1749541446660
+  description: ""
+collection:
+  - url: http://127.0.0.1:8000/api/menu/
+    name: get menu items
+    meta:
+      id: req_442f19b0d2844ca883fa56bbfb521802
+      created: 1749541446667
+      modified: 1749541446667
+      isPrivate: false
+      description: ""
+      sortKey: -1749537673572
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: bc271b69b821e33d48e44a60453972c5a3575fe4
+      prefix: Token
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/api-token-auth/
+    name: get token
+    meta:
+      id: req_8e4f3ce6d4e0432d94ad22548c179687
+      created: 1749541446667
+      modified: 1749541446667
+      isPrivate: false
+      description: ""
+      sortKey: -1749541102402
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "username": "admin",
+          "password": "admin"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: none
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/menu/
+    name: add menu item
+    meta:
+      id: req_c1cb7561f43442a48c85c6adfe538abb
+      created: 1749541446667
+      modified: 1749541446667
+      isPrivate: false
+      description: ""
+      sortKey: -1749537673522
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "rice",
+          "price": "60",
+          "inventory": 6
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: e557442f45c00d36dcf8dffbddc0d594ff8c4a99
+      prefix: Token
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/bookings?date=2025-06-10
+    name: get bookings
+    meta:
+      id: req_089f860e52f64294b1c8591af9843c14
+      created: 1749541446668
+      modified: 1749541446668
+      isPrivate: false
+      description: ""
+      sortKey: -1749537673473.8555
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: e557442f45c00d36dcf8dffbddc0d594ff8c4a99
+      prefix: Token
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/menu_item/16
+    name: update menu item
+    meta:
+      id: req_5c94dbbc153345739b3bcafd5bd7376a
+      created: 1749541446668
+      modified: 1749541446668
+      isPrivate: false
+      description: ""
+      sortKey: -1749537673484.5
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "coffee",
+          "price": "95",
+          "inventory": 9
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: e557442f45c00d36dcf8dffbddc0d594ff8c4a99
+      prefix: Token
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/menu_item/16
+    name: delete menu item
+    meta:
+      id: req_b67b864043304dc08047e46c33ae1fc6
+      created: 1749541446668
+      modified: 1749541446668
+      isPrivate: false
+      description: ""
+      sortKey: -1749537673475.125
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: e557442f45c00d36dcf8dffbddc0d594ff8c4a99
+      prefix: Token
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/menu_item/16
+    name: update menu item
+    meta:
+      id: req_c53dcb2918ba484ebf36361860f116a3
+      created: 1749541446668
+      modified: 1749541446668
+      isPrivate: false
+      description: ""
+      sortKey: -1749537673478.25
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "coffee",
+          "price": "90",
+          "inventory": 10
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: e557442f45c00d36dcf8dffbddc0d594ff8c4a99
+      prefix: Token
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/menu_item/5
+    name: get menu item
+    meta:
+      id: req_e6f7470051ea4b2ab23228d4805557dc
+      created: 1749541446668
+      modified: 1749541446668
+      isPrivate: false
+      description: ""
+      sortKey: -1749537673497
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: e557442f45c00d36dcf8dffbddc0d594ff8c4a99
+      prefix: Token
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/
+    name: /api/
+    meta:
+      id: req_3c0b100f28d54afc8a6fb54b6e07e267
+      created: 1749541446669
+      modified: 1749541446669
+      isPrivate: false
+      description: ""
+      sortKey: -1749538250729
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/about/
+    name: /api/about/
+    meta:
+      id: req_60640e30da7b4a5e915313b707a0d7e3
+      created: 1749541446669
+      modified: 1749541446669
+      isPrivate: false
+      description: ""
+      sortKey: -1749537963764
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/book/
+    name: get book
+    meta:
+      id: req_7f8b31820e474ed7bffd3bae79b1c295
+      created: 1749541446669
+      modified: 1749541446669
+      isPrivate: false
+      description: ""
+      sortKey: -1749537673473.8066
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: e557442f45c00d36dcf8dffbddc0d594ff8c4a99
+      prefix: Token
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/bookings
+    name: add bookings
+    meta:
+      id: req_c5234619abcc4ca3b442e9518f9e5e6a
+      created: 1749541446669
+      modified: 1749541446669
+      isPrivate: false
+      description: ""
+      sortKey: -1749537673473.831
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "g", 
+          "number_of_guests": 1, 
+          "booking_date": "2025-06-10T00:00:00Z", 
+          "reservation_slot": 15
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: e557442f45c00d36dcf8dffbddc0d594ff8c4a99
+      prefix: Token
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/reservations
+    name: get reservations
+    meta:
+      id: req_f42a0e99ce32421e9d278b91ab773c0d
+      created: 1749541446669
+      modified: 1749541446669
+      isPrivate: false
+      description: ""
+      sortKey: -1749537673474.3438
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: e557442f45c00d36dcf8dffbddc0d594ff8c4a99
+      prefix: Token
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/api/book/
+    name: add book
+    meta:
+      id: req_af9cf422a8db42b4857adb7ad7d19eeb
+      created: 1749541446670
+      modified: 1749541446670
+      isPrivate: false
+      description: ""
+      sortKey: -1749537673473.7578
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "g", 
+          "number_of_guests": 1, 
+          "booking_date": "2025-06-10T00:00:00Z", 
+          "reservation_slot": 15
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      token: e557442f45c00d36dcf8dffbddc0d594ff8c4a99
+      prefix: Token
+      disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/auth/token/logout
+    name: user logout
+    meta:
+      id: req_c89f68a83ec940078d6133ba9fa3cd9e
+      created: 1749541446670
+      modified: 1749541446670
+      isPrivate: false
+      description: ""
+      sortKey: -1749538963697.25
+    method: POST
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    authentication:
+      type: bearer
+      prefix: Token
+      token: bc271b69b821e33d48e44a60453972c5a3575fe4
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/auth/token/login
+    name: user login
+    meta:
+      id: req_d7a0973bbad8442fafd176cacdc5060d
+      created: 1749541446670
+      modified: 1749541446670
+      isPrivate: false
+      description: ""
+      sortKey: -1749539676565.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "username": "rana",
+          "password": "ranarana"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://127.0.0.1:8000/auth/users/
+    name: user registration
+    meta:
+      id: req_ed02e2fc36954fac9e90c84ef7100ae3
+      created: 1749541446670
+      modified: 1749541446670
+      isPrivate: false
+      description: ""
+      sortKey: -1749541102302
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "rana@example.com",
+          "username": "rana",
+          "password": "ranarana"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_9156b31acc4e449bad1cf8ec90becffe
+    created: 1749541446662
+    modified: 1749541446662
+  cookies:
+    - key: csrftoken
+      value: xwAC1xQPp1RSxcZAjVlU8hNprV6LSoKd
+      maxAge: 31449600
+      domain: 127.0.0.1
+      path: /
+      hostOnly: true
+      creation: 2025-06-10T06:56:57.957Z
+      lastAccessed: 2025-06-10T07:20:35.026Z
+      sameSite: lax
+      id: 3b655185-9596-4980-ba63-7686191af5a0
+environments:
+  name: Base Environment
+  meta:
+    id: env_00577114cf0949089a82c24bb294cb43
+    created: 1749541446662
+    modified: 1749541446662
+    isPrivate: false
