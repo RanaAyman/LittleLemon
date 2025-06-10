@@ -5,6 +5,9 @@ Meta Back-End Developer Course on Coursera
 To ensure Swagger integration for API documentation, install `drf_yasg` using:
 *pipenv install drf_yasg*
 
+## Insomnia Collection
+you can find the collection uploaded with file name 'Insomnia_LittleLemonCapstone.yaml'
+
 ## APIs
 For user registration:
   - POST  /auth/users/
